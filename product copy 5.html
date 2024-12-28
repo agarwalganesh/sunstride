@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Mokobara Transit Backpack</title>
+    <style>
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+    display: flex;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Product Image */
+.product-image {
+    flex: 1;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Details Section */
+.product-details {
+    flex: 2;
+    padding-left: 20px;
+}
+
+/* Product Title */
+.product-details h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Price Section */
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.original-price {
+    text-decoration: line-through;
+    font-size: 1.2em;
+    color: #888;
+}
+
+.membership-price {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.product-details p {
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Color Options */
+.color-options {
+    margin-top: 20px;
+}
+
+.color-options strong {
+    font-size: 1.1em;
+    color: #333;
+    margin-right: 10px;
+}
+
+.color-options input[type="radio"] {
+    display: none;
+}
+
+.color-options label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+/* Show color bullets as radio buttons */
+.color-options input[type="radio"]:checked + label {
+    border: 2px solid #4CAF50; /* Green border when selected */
+    transform: scale(1.1);
+}
+
+/* Hover effect for color options */
+.color-options label:hover {
+    transform: scale(1.1);
+}
+
+/* Specific Color Styles for Labels */
+.yellow {
+    background-color: #FFEB3B;
+}
+
+.green {
+    background-color: #4CAF50;
+}
+
+.blue {
+    background-color: #2196F3;
+}
+
+.black {
+    background-color: #000;
+}
+
+/* Personalization Option */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+label[for="personalization"] {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049;
+}
+
+/* Product Description */
+.description {
+    margin-top: 30px;
+    font-size: 1em;
+    color: #333;
+}
+
+.description h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Cart Summary Section */
+.cart-summary {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cart-summary p {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.cart-summary strong {
+    font-weight: bold;
+    color: #333;
+}
+
+#totalPrice {
+    color: #4CAF50;
+    font-size: 1.4em;
+}
+/* Button/Link Styling for Proceed to Payment */
+a {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    font-size: 1.1em;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+.original-price{
+    color: red;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Product Image -->
+        <div class="product-image">
+            <img src="public/images/1.jpg" alt="Mokobara Transit Backpack">
+        </div>
+    
+        <!-- Product Details -->
+        <div class="product-details">
+            <h1>Transiter Backpacks - 30L</h1>
+            <p class="price">
+                ₹3,499<span class="original-price">₹9,999</span>
+            </p>
+    
+            <!-- Color Options -->
+            <div class="color-options">
+                <strong>Color:</strong>
+                <!-- Color Options as Radio Buttons -->
+                <input type="radio" id="yellow" name="color" value="yellow" onclick="selectColor('yellow')" />
+                <label for="yellow" class="yellow" title="Home Grown Sunray"></label>
+    
+                <input type="radio" id="green" name="color" value="green" onclick="selectColor('green')" />
+                <label for="green" class="green" title="Evergreen"></label>
+    
+                <input type="radio" id="blue" name="color" value="blue" onclick="selectColor('blue')" />
+                <label for="blue" class="blue" title="Blue"></label>
+    
+                <input type="radio" id="black" name="color" value="black" onclick="selectColor('black')" />
+                <label for="black" class="black" title="Black"></label>
+            </div>
+    
+            <!-- Personalization -->
+            <div>
+                <input type="checkbox" id="personalization">
+                <label for="personalization">Add Personalized Engraving (+₹799)</label>
+            </div>
+    
+           
+           
+           
+            <!-- Add to Cart Form -->
+            <form id="cartForm">
+                <a href="http://127.0.0.1:5500/checkout.html">Add to Cart and Checkout</a>
+            </form>
+    
+            <!-- Product Description -->
+            <div class="description">
+                <h2>Product Description</h2>
+                <p>
+                    The Smart Solar Backpack combines eco-friendly design with modern functionality. Compact and lightweight (48 cm x 30 cm x 15 cm, 1.5 kg), it fits laptops up to 15.6 inches. Made from durable, water-resistant materials, it features 9W solar panels, a 10,000 mAh battery, and smart charging with USB-A, USB-C, and a charge controller. Comfort is ensured with padded straps, a breathable back panel, and secure features like hidden zippers, RFID-blocking pockets, and an anti-theft alarm. With multiple compartments, an expandable side pocket, and an LED indicator for power status, it’s perfect for professionals, students, and adventurers.
+                </p>
+            </div>
+    
+            <!-- Cart Summary Section -->
+            <div class="cart-summary" id="cartSummary" style="display: none;">
+                <h3>Cart Summary:</h3>
+                <p><strong>Selected Color:</strong> <span id="selectedColor"></span></p>
+                <p><strong>Personalization:</strong> <span id="personalizationText"></span></p>
+                <p><strong>Total Price:</strong> ₹<span id="totalPrice">6499</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
